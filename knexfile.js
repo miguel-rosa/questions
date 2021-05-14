@@ -1,3 +1,4 @@
+// const { config } = require("dotenv/types");
 const path = require("path");
 
 const connection = {
@@ -17,11 +18,7 @@ const connection = {
 
   staging: {
     client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10
@@ -33,11 +30,7 @@ const connection = {
 
   production: {
     client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10
@@ -46,7 +39,6 @@ const connection = {
       tableName: 'knex_migrations'
     }
   }
-
 }
 
-module.exports = connection
+module.exports = connection;

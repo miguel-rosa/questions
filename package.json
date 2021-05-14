@@ -5,16 +5,24 @@
   "main": "index.js",
   "scripts": {
     "dev": "node-dev src/server.js",
+    "migrate": "knex migrate:make",
+    "lmigrate": "knex migrate:latest",
+    "seed": "knex seed:make",
+    "lseed": "knex seed:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "miguel-rosa",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.4",
     "node-dev": "^6.7.0",
     "path": "^0.12.7",
+    "pg": "^8.6.0",
     "sqlite3": "^5.0.2"
   }
 }
